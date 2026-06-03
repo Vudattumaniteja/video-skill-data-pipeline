@@ -78,3 +78,22 @@ Run-level outputs:
 
 - `manifest/preprocessing_report.json`
 - `manifest/preprocessing_summary.md`
+
+## `assemble_pilot_packets.py`
+
+Builds paste-ready prompt packets for the 8-video pilot run. This does not call
+an LLM; it assembles the current prompt stack, matching channel module, manifest
+record, and evidence paths for each pilot video.
+
+```powershell
+py scripts\assemble_pilot_packets.py --run-id pilot_v1_001
+```
+
+Outputs:
+
+- `pilot/agent_packets/README.md`
+- `pilot/agent_packets/{video_id}/RUN_PROMPT.md`
+
+Use each `RUN_PROMPT.md` as the instruction packet for one Video Analysis Agent.
+After all 8 `analysis.md` and `analysis.json` files exist, run the Pilot Review
+Agent using `prompts/pilot/pilot-review-agent-prompt.md`.
