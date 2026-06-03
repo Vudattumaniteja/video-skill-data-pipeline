@@ -1,11 +1,11 @@
 # Generated/runtime artifacts
-manifest/
-input_videos/
-evidence/
-analysis/
-analysis_json/
-pilot/
-synthesis/
+/manifest/
+/input_videos/
+/evidence/
+/analysis/
+/analysis_json/
+/pilot/
+/synthesis/
 
 # Local/editor noise
 .DS_Store
