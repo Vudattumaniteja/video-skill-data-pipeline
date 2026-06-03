@@ -217,6 +217,16 @@ video_skill_pipeline/
 
 The manifest layer should be treated as the source of truth once implemented. Folder scanning can validate paths, but it should not silently invent dataset records.
 
+For v1, manifest authoring is generated from Instagram JSON exports using `scripts/import_instagram_reels.py`. The source exports provide `url`, owner metadata, captions, thumbnails, counts, and timestamps. The script converts those records into explicit manifest entries, assigns stable Video IDs, extracts Platform IDs from Instagram URLs, creates a reproducible random pilot split, and writes local file paths under `input_videos/{channel_id}/`.
+
+Local video location:
+
+```text
+input_videos/{channel_id}/{video_id}.mp4
+```
+
+Source URL mapping is generated from the JSON export `url` field. Records without a usable Instagram URL are invalid for v1 import.
+
 ### 7.1 `channels.json`
 
 Purpose: define channel-level metadata, prompt modules, and extraction missions.
@@ -334,6 +344,14 @@ FFmpeg + Python helper scripts
 ```
 
 FFmpeg extracts deterministic media signals such as frames, keyframes, audio data, and duration. Python helpers assemble pipeline artifacts such as `frame_grid_1fps.jpg`, `scene_changes.json`, `audio_peaks.json`, and `video_index.json`.
+
+The initial media download and organization helper is:
+
+```text
+scripts/import_instagram_reels.py
+```
+
+It uses `py -m yt_dlp` to download Instagram media from manifest source URLs into the canonical `input_videos/{channel_id}/` layout.
 
 ### 8.2 Transcript Extraction
 
@@ -1101,9 +1119,9 @@ Existing prompt layer:
 
 These remain unresolved and should be closed before implementation:
 
-1. Exact local location of the 40 downloaded videos.
-2. Exact mapping from downloaded files to Instagram source URLs.
-3. Whether manifest authoring is manual, generated, or hybrid.
+1. Exact behavior when future JSON exports contain missing or duplicate Instagram URLs.
+2. Whether generated manifests should remain local runtime artifacts or be promoted into tracked dataset metadata.
+3. Whether future manifest authoring needs manual review before pipeline registration.
 4. Exact Proactor automation selectors and behavior.
 5. Exact Proactor extraction mechanism for producing structured timestamped transcript segments.
 6. Exact preprocessing helper boundaries and script names.

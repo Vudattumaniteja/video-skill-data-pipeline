@@ -83,6 +83,9 @@ The final product is not a channel clone. The final product is a set of reusable
 - Use a Weighting Matrix to decide which categories each channel should emphasize.
 - Version Weighting Matrix revisions instead of overwriting them.
 - Use `weight >= 8.0` as deep extraction, `6.5-7.9` as optional extraction, and `< 6.5` as generally skipped.
+- Generate v1 manifests from Instagram JSON exports using `scripts/import_instagram_reels.py`.
+- Use `input_videos/{channel_id}/{video_id}.mp4` as the canonical local downloaded-video location.
+- Use the Instagram export `url` field as the source URL mapping for each Video Sample.
 - Generate Evidence Bundles before any AI agent analyzes a Video Sample.
 - Use FFmpeg plus Python helper scripts for v1 local preprocessing artifacts.
 - Require Video Analysis Agents to use Evidence Bundles first and inspect raw local video only for targeted timestamp verification.
@@ -177,11 +180,11 @@ The pilot should be treated as a reliability gate. The 8 pilot videos are diagno
 
 The following items are still not fully resolved and should be clarified before implementation:
 
-1. Whether manifests are the single source of truth or whether folder scanning can create missing manifest records.
-2. The exact manifest schema for channels, videos, weighting matrices, preprocessing status, pilot status, and analysis status.
-3. The exact current location of downloaded videos.
-4. The exact mapping between each downloaded video and its Instagram source URL.
-5. Whether every video has an accessible source URL for Proactor transcript extraction.
+1. Exact behavior when future JSON exports contain missing or duplicate Instagram URLs.
+2. Whether generated manifests should remain local runtime artifacts or be promoted into tracked dataset metadata.
+3. Whether future manifest authoring needs manual review before pipeline registration.
+4. Exact schema extensions for preprocessing status, pilot status, and analysis status.
+5. Exact Proactor transcript eligibility behavior for records whose Instagram URL becomes unavailable later.
 6. The exact Proactor website automation flow, including selectors, rate limits, download behavior, and failure detection.
 7. Exact Proactor extraction mechanism for producing structured timestamped transcript segments.
 8. The exact preprocessing helper boundaries and script names.

@@ -18,5 +18,12 @@ Current source-of-truth documents:
 - `docs/prd/video-skill-data-pipeline-prd.md`
 - `docs/adr/`
 - `prompts/`
+- `scripts/import_instagram_reels.py`
 
 Runtime data, downloaded videos, generated evidence, analysis outputs, and synthesis outputs are intentionally ignored until the implementation stage defines safe artifact handling.
+
+To import Instagram JSON exports and download videos locally:
+
+```powershell
+py scripts\import_instagram_reels.py --source-dir "C:\path\to\exports" --download
+```
