@@ -110,6 +110,24 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
+def clean_text(value: Any) -> Any:
+    if isinstance(value, str):
+        text = value
+        if any(marker in text for marker in ("â", "ð", "Ã")):
+            try:
+                repaired = text.encode("latin1").decode("utf-8")
+                if repaired.count("�") <= text.count("�"):
+                    return repaired
+            except UnicodeError:
+                pass
+        return text
+    if isinstance(value, list):
+        return [clean_text(item) for item in value]
+    if isinstance(value, dict):
+        return {key: clean_text(item) for key, item in value.items()}
+    return value
+
+
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -219,13 +237,13 @@ def build_manifests(
                     "dataset_split": "pilot" if (offset - 1) in pilot_indices else "full_rollout",
                     "status": "registered",
                     "source_export": {
-                        "display_url": item.get("displayUrl"),
-                        "caption": item.get("caption"),
-                        "owner_full_name": item.get("ownerFullName"),
-                        "owner_username": item.get("ownerUsername"),
+                        "display_url": clean_text(item.get("displayUrl")),
+                        "caption": clean_text(item.get("caption")),
+                        "owner_full_name": clean_text(item.get("ownerFullName")),
+                        "owner_username": clean_text(item.get("ownerUsername")),
                         "comments_count": item.get("commentsCount"),
                         "likes_count": item.get("likesCount"),
-                        "timestamp": item.get("timestamp"),
+                        "timestamp": clean_text(item.get("timestamp")),
                     },
                 }
             )
@@ -256,6 +274,28 @@ def ensure_runtime_dirs(root: Path, videos: list[dict[str, Any]]) -> None:
         (root / Path(video["evidence_dir"])).mkdir(parents=True, exist_ok=True)
         (root / Path(video["analysis_file"]).parent).mkdir(parents=True, exist_ok=True)
         (root / Path(video["analysis_json"]).parent).mkdir(parents=True, exist_ok=True)
+
+
+def write_video_evidence_sidecars(root: Path, videos: list[dict[str, Any]]) -> None:
+    for video in videos:
+        evidence_dir = root / Path(video["evidence_dir"])
+        evidence_dir.mkdir(parents=True, exist_ok=True)
+
+        source_metadata = {
+            "video_id": video["video_id"],
+            "channel_id": video["channel_id"],
+            "platform": video["platform"],
+            "platform_id": video["platform_id"],
+            "source_url": video["source_url"],
+            "local_file": video["local_file"],
+            "dataset_split": video["dataset_split"],
+            "source_export": video["source_export"],
+        }
+        write_json(evidence_dir / "source_metadata.json", source_metadata)
+
+        caption = video["source_export"].get("caption")
+        if caption:
+            (evidence_dir / "caption.txt").write_text(str(caption).strip() + "\n", encoding="utf-8")
 
 
 def download_video(root: Path, video: dict[str, Any], cookies_from_browser: str | None, overwrite: bool) -> str:
@@ -335,6 +375,7 @@ def main() -> int:
     source_dir = Path(args.source_dir).expanduser().resolve()
     videos, channels, videos_manifest, weights, runs, import_report = build_manifests(root, source_dir, args.seed)
     ensure_runtime_dirs(root, videos)
+    write_video_evidence_sidecars(root, videos)
 
     write_json(root / "manifest" / "channels.json", channels)
     write_json(root / "manifest" / "videos.json", videos_manifest)

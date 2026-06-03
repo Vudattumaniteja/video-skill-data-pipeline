@@ -42,5 +42,7 @@ Outputs:
 - `manifest/runs.json`
 - `manifest/draft_import_report.md`
 - `input_videos/{channel_id}/{video_id}.mp4` when `--download` is used
+- `evidence/{channel_id}/{video_id}/source_metadata.json`
+- `evidence/{channel_id}/{video_id}/caption.txt`
 
 The runtime output folders are ignored by git.
