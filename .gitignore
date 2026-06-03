@@ -6,6 +6,7 @@
 /analysis_json/
 /pilot/
 /synthesis/
+/automation/
 
 # Local/editor noise
 .DS_Store
