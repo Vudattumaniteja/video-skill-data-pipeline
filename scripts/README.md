@@ -46,3 +46,35 @@ Outputs:
 - `evidence/{channel_id}/{video_id}/caption.txt`
 
 The runtime output folders are ignored by git.
+
+## `preprocess_evidence.py`
+
+Generates deterministic Evidence Bundle helper artifacts from downloaded videos.
+
+Run all videos:
+
+```powershell
+py scripts\preprocess_evidence.py --overwrite
+```
+
+Run only pilot videos:
+
+```powershell
+py scripts\preprocess_evidence.py --split pilot --overwrite
+```
+
+Main outputs per video:
+
+- `video_metadata.json`
+- `transcript_meta.json` placeholder until Proactor transcript import runs
+- `frame_grid_1fps.jpg`
+- `scene_changes.json`
+- `audio_peaks.json`
+- `keyframes/keyframes.json`
+- `keyframes/*.jpg`
+- `video_index.json`
+
+Run-level outputs:
+
+- `manifest/preprocessing_report.json`
+- `manifest/preprocessing_summary.md`

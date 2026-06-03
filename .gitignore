@@ -7,6 +7,8 @@
 /pilot/
 /synthesis/
 /automation/
+/tasks/
+/transcript_cache.json
 
 # Local/editor noise
 .DS_Store
