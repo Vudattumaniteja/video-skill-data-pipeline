@@ -1,0 +1,28 @@
+# Generated/runtime artifacts
+manifest/
+input_videos/
+evidence/
+analysis/
+analysis_json/
+pilot/
+synthesis/
+
+# Local/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Large media files
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.wav
+*.mp3
