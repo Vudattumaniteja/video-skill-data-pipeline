@@ -108,6 +108,32 @@ def format_timestamp(seconds: float) -> str:
     return f"{minutes:02d}:{remainder:04.1f}"
 
 
+def parse_timestamp_seconds(value: Any) -> float:
+    if isinstance(value, int | float):
+        return float(value)
+    if value is None:
+        return 0.0
+    text = str(value).strip()
+    if not text:
+        return 0.0
+    try:
+        return float(text)
+    except ValueError:
+        pass
+
+    parts = text.split(":")
+    try:
+        if len(parts) == 2:
+            minutes, seconds = parts
+            return (float(minutes) * 60) + float(seconds)
+        if len(parts) == 3:
+            hours, minutes, seconds = parts
+            return (float(hours) * 3600) + (float(minutes) * 60) + float(seconds)
+    except ValueError:
+        return 0.0
+    return 0.0
+
+
 def probe_video(record: VideoRecord) -> dict[str, Any]:
     cmd = [
         "ffprobe",
@@ -504,7 +530,7 @@ def build_video_index(
 
     if transcript and transcript.get("segments"):
         for segment in transcript["segments"]:
-            start = float(segment.get("start_seconds", segment.get("start", 0)))
+            start = parse_timestamp_seconds(segment.get("start_seconds", segment.get("start", 0)))
             events.append(
                 {
                     "timestamp": format_timestamp(start),
