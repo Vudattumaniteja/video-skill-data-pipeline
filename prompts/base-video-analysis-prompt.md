@@ -24,6 +24,7 @@ You will receive:
 - Prefer timestamped observations over general advice.
 - If a category is low-weight for the channel, skip it unless the evidence is exceptional.
 - If evidence is weak, say it is weak.
+- **Strict Selection/Sourcing Distinction**: `asset_sourcing` is strictly off-limits unless the evidence bundle or video index explicitly shows the sourcing process, capture interface, screen recordings of production/sourcing, custom renders, or asset preparation (e.g., masking/cutout creation). If only the final visual is visible, the observation MUST be classified under `asset_selection`.
 
 ## Analysis Flow
 
@@ -112,10 +113,10 @@ Transcript Status: {success|failed}
 
 ```json
 {
-  "video_id": "",
-  "channel_id": "",
-  "platform_id": "",
-  "weighting_matrix_version": "",
+  "video_id": "channel_1_video_001",
+  "channel_id": "channel_1_upgrido_retro_doc",
+  "platform_id": "REEL_SHORTCODE",
+  "weighting_matrix_version": "v1",
   "transcript_status": "success",
   "evidence_availability": {
     "transcript": true,
@@ -132,26 +133,61 @@ Transcript Status: {success|failed}
       "category": "sound_design_sync",
       "category_weight": 9.5,
       "evidence_confidence": 0.85,
-      "summary": "",
-      "what_happens": "",
-      "why_it_matters": "",
-      "evidence_reference": "",
+      "summary": "Short observation summary",
+      "what_happens": "Description of what happens visually and aurally",
+      "why_it_matters": "Why this represents a reusable skill or framework rule",
+      "evidence_reference": "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/",
       "source_evidence": {
-        "frames": [],
-        "audio_markers": [],
-        "transcript_window": ""
+        "frames": [
+          "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/before.jpg",
+          "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/at.jpg",
+          "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/after.jpg"
+        ],
+        "audio_markers": [
+          {
+            "timestamp": "00:00.0",
+            "time_seconds": 0.0,
+            "intensity": 0.95,
+            "source": "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/audio_window.json"
+          }
+        ],
+        "transcript_window_path": "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/transcript_window.json",
+        "transcript_time_range": "00:00.0-00:05.0"
       },
-      "limits": ""
+      "limits": "Limits of the observation or source bounds",
+      "claim_verification_scope": "edit_pattern_only",
+      "reference_validation": {
+        "required_files": [
+          "reference.md",
+          "before.jpg",
+          "at.jpg",
+          "after.jpg",
+          "transcript_window.json"
+        ],
+        "missing_files": [],
+        "modalities_proven": [
+          "visual",
+          "transcript"
+        ],
+        "modalities_missing": []
+      }
     }
   ],
   "category_coverage": {
-    "asset_selection": [],
+    "asset_selection": ["obs_001"],
     "asset_sourcing": [],
     "good_video_principles": [],
     "editing_layout": [],
-    "sound_design_sync": [],
+    "sound_design_sync": ["obs_001"],
     "data_text_density": []
   },
+  "coverage_gaps": [
+    {
+      "category": "asset_sourcing",
+      "reason": "Explain gap here, do not put text inside category_coverage arrays",
+      "severity": "expected_gap"
+    }
+  ],
   "agent_boundary_check": {
     "cross_video_claims": false,
     "cross_channel_claims": false,
@@ -163,11 +199,19 @@ Transcript Status: {success|failed}
         "note_id": "note_001",
         "type": "uncertainty",
         "timestamp": "00:00.0",
-        "text": "",
-        "evidence_reference": "",
+        "text": "Detailed note text here",
+        "evidence_reference": "evidence/channel_1_upgrido_retro_doc/channel_1_video_001/references/obs_001/",
         "related_observation_id": "obs_001"
       }
     ]
   }
 }
 ```
+
+## Prompt Schema & Format Rules (Strictly Enforced)
+
+1. **Category Coverage Cleanliness:** `category_coverage` values MUST be arrays of observation ID strings only. Never put prose, descriptions, or comments inside these arrays. Use `coverage_gaps` if a category lacks observations.
+2. **Normalized Paths:** Every path inside the JSON must start with `evidence/{channel_id}/{video_id}/...`. Do not write bare `keyframes/...` or bare `references/...`.
+3. **Split Transcript:** `source_evidence.transcript_window_path` must hold only the file path, and `source_evidence.transcript_time_range` must hold only the time range.
+4. **Structured Audio:** `source_evidence.audio_markers` must consist of objects with keys `timestamp`, `time_seconds`, and `intensity` (and optional `source`), never raw strings.
+

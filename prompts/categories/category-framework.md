@@ -8,6 +8,8 @@ The pipeline generates final skills per category, not per channel.
 
 Extract rules about choosing the right visual material for a point in the script.
 
+**Boundary Constraint**: If only the final visual asset is visible in the video, the observation MUST fall under `asset_selection`, not `asset_sourcing`.
+
 Look for:
 
 - before/after asset replacement
@@ -22,6 +24,8 @@ Look for:
 ### 2. Sourcing Great Assets
 
 Extract rules about where strong assets come from and how they are prepared.
+
+**Boundary Constraint**: This category is **strictly off-limits** unless the evidence bundle or video index explicitly shows the sourcing process, capture interface, screen recordings of production/sourcing, custom 3D rendering interfaces, UI captures of platforms/tools, or asset preparation workflow (like masking, cutout creation, keying, or cleanup). If no provenance or preparation process is shown, classify as `asset_selection`.
 
 Look for:
 
