@@ -1,0 +1,103 @@
+{
+  "channel_id": "channel_4_varunmaya",
+  "weighting_matrix_version": "v1",
+  "videos_reviewed": [
+    "channel_4_video_001",
+    "channel_4_video_002",
+    "channel_4_video_003",
+    "channel_4_video_004",
+    "channel_4_video_005",
+    "channel_4_video_006"
+  ],
+  "category_summaries": {
+    "asset_selection": {
+      "strength": "Frequent use of high-credibility, first-party and third-party visual evidence assets (such as live product screenshots, tweet embeds, news article headlines, and keynote presentation footage) to ground technical, design, or market claims.",
+      "patterns": [
+        "Embedded Social Proof (Tweets): Placing tweets from prominent figures directly onto the split layout as concrete proof surfaces.",
+        "Authority Footage & Product Details: Incorporating video and close-ups from keynotes, developer updates, or product close-ups.",
+        "Establishing Shot Resets: Using brief wide-angle office/room shots to break close-up monotony and establish physical workspace context."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_005/",
+        "evidence/channel_4_varunmaya/channel_4_video_002/references/obs_002/",
+        "evidence/channel_4_varunmaya/channel_4_video_005/references/obs_002/",
+        "evidence/channel_4_varunmaya/channel_4_video_006/references/obs_001/"
+      ],
+      "limits": "Tweet content or press headlines are accepted as visible assets without independent validation of the claims; legibility of tweet timestamps and metrics is poor on small mobile layouts."
+    },
+    "asset_sourcing": {
+      "strength": "Minimal direct evidence; the channel focuses on final visual assets and post-production compilations rather than showing the workflow or interface of sourcing/retrieving assets.",
+      "patterns": [
+        "Physical Hardware Showcases: Supporting technical claims with raw physical hardware/component close-ups."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_004/references/obs_005/"
+      ],
+      "limits": "Sourcing workflows (search engines, screen recordings of asset downloads, file explorers, keying/masking UI) are completely omitted across all 6 videos. All files have expected gaps in this category. Power-density specs are transcript-supported only, without independent benchmark sheets in the evidence."
+    },
+    "good_video_principles": {
+      "strength": "Strong engagement hook strategies, utilizing recognizable faces, products, or bold analogies at the start of the video, and anchoring transitions with structural presenter resets or national/big-picture payoffs at the end.",
+      "patterns": [
+        "Recognizable Hook Anchors: Launching videos with a close-up of a prominent guest/star, a design model reveal, or industry benchmarks to capture immediate interest.",
+        "Narrative Reframing and Payoffs: Concluding technical deep-dives with a thematic reframe or visual bookends.",
+        "Presenter Reset Cuts: Interrupting B-roll with a centered talking-head shot to transition the audience from detail review to counterarguments/caveats."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_001/",
+        "evidence/channel_4_varunmaya/channel_4_video_003/references/obs_001/",
+        "evidence/channel_4_varunmaya/channel_4_video_004/references/obs_008/"
+      ],
+      "limits": "Hook pacing and narrative value are subjective; the still frame references do not capture the temporal pace of resets. Transcript spelling discrepancies require manual reconciliation."
+    },
+    "editing_layout": {
+      "strength": "Sophisticated vertical screen configurations, utilizing split screens (both 50/50 and dynamic ratios) to show host/guest interaction, fanned overlays, floating card assets, and rounded widescreen outro containers.",
+      "patterns": [
+        "Vertically Stacked Split Screens: Stacking host and guest feeds to fit landscape webcam footage into a vertical 9:16 layout while maintaining simultaneous reaction visibility.",
+        "Rounded Floating Overlay Cards: Framing tweets, articles, and external videos in rounded-corner cards over the talking head, keeping presenter contact in the bottom half.",
+        "Stacked Comparison Layouts: Side-by-side or stacked visual cards to display product benchmarks or fanned graphic cards to show quantity.",
+        "Encapsulated Outro Templates: Housing a widescreen clip inside a vertical template with clean call-to-actions (\"FULL VIDEO ON YOUTUBE\" / \"LINK IN BIO\")."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_006/",
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_009/",
+        "evidence/channel_4_varunmaya/channel_4_video_002/references/obs_001/",
+        "evidence/channel_4_varunmaya/channel_4_video_006/references/obs_003/"
+      ],
+      "limits": "Vertical cropping of landscape assets occasionally clips details, such as hand gestures or small screen elements. Rapid transitions occur very quickly, leaving stable visuals on screen for only a fraction of a second."
+    },
+    "sound_design_sync": {
+      "strength": "Consistent coordination of edit cuts, full-screen transitions, and graphic card entries with local audio/speech peaks to maintain dynamic conversational momentum.",
+      "patterns": [
+        "Dialogue-Driven Visual Cuts: Executing visual cuts and layouts resets immediately following vocal spikes or speech intensity peaks.",
+        "Graphic Entrance Syncing: Synchronizing the appearance of floating cards/overlays to audio peaks.",
+        "Segment Pivots on Audio Peaks: Transitioning between narrative themes and live CES footage on strong vocal emphasis peaks."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_003/",
+        "evidence/channel_4_varunmaya/channel_4_video_006/references/obs_002/",
+        "evidence/channel_4_varunmaya/channel_4_video_006/references/obs_004/"
+      ],
+      "limits": "The lack of separated audio tracks (voice vs music vs sound effects) in evidence files makes verifying sound design alignment highly subjective. Missing audio peaks in late timeline segments leaves late observations without direct audio validation data."
+    },
+    "data_text_density": {
+      "strength": "High typographic and graphic density, utilizing stylized large caps, center callouts, tilted screenshots, spec sheets, labeled diagrams, and detailed thread cards to convey high volumes of technical detail.",
+      "patterns": [
+        "Oversized Italic Captions & Centers: Capturing viewer attention with large, white, italicized uppercase captions for key spoken terms or huge center-screen text punches.",
+        "Datasheets & Complex Spec Tables: Presenting detailed product specifications in tabular format or labeled systems diagrams.",
+        "Tilted Screenshots & Thread Overlays: Displaying dense article cards or stacked floating thread cards directly on screen for self-paced reading."
+      ],
+      "evidence_references": [
+        "evidence/channel_4_varunmaya/channel_4_video_001/references/obs_008/",
+        "evidence/channel_4_varunmaya/channel_4_video_004/references/obs_004/",
+        "evidence/channel_4_varunmaya/channel_4_video_005/references/obs_005/",
+        "evidence/channel_4_varunmaya/channel_4_video_006/references/obs_006/"
+      ],
+      "limits": "Heavy overlays or text stacks can overlap with the central caption blocks, slightly reducing legibility. High-density datasheet tables or multi-part threads are difficult to parse in a standard 9:16 vertical stream without the viewer manually freeze-framing the video."
+    }
+  },
+  "do_not_overgeneralize": [
+    "Do not assume asset sourcing workflows are present; the channel shows only final visual assets.",
+    "Do not assume sound sync patterns are driven by specific sound effects; the evidence does not contain separated audio tracks.",
+    "Do not generalize transcript precision; naming conventions and duplicate words suggest parser inaccuracies."
+  ]
+}

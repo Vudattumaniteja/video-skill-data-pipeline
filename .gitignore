@@ -5,7 +5,9 @@
 /analysis/
 /analysis_json/
 /pilot/
-/synthesis/
+/synthesis/category_patterns/
+!/synthesis/channel_profiles/
+!/synthesis/skills/
 /automation/
 /tasks/
 /transcript_cache.json

@@ -1,0 +1,110 @@
+{
+  "channel_id": "channel_3_aevy_tv",
+  "weighting_matrix_version": "v1",
+  "videos_reviewed": [
+    "channel_3_video_001",
+    "channel_3_video_002",
+    "channel_3_video_003",
+    "channel_3_video_004",
+    "channel_3_video_005",
+    "channel_3_video_006",
+    "channel_3_video_007",
+    "channel_3_video_008",
+    "channel_3_video_009",
+    "channel_3_video_010"
+  ],
+  "category_summaries": {
+    "asset_selection": {
+      "strength": "Direct visual representation of terms, styles, and entities via Ghibli stills, custom vector diagrams, historical painted portraits, and website/product cards instead of generic stock B-roll.",
+      "patterns": [
+        "Concrete Visual Anchors (Style/Historical): Selecting highly specific art and illustration assets, such as Studio Ghibli frames, painted portraits, or ritual/religious illustrations rather than standard stock footage.",
+        "Embedded Web and Product Cards: Utilizing screenshots of product interfaces, company website homepages, or article headers instead of abstract B-roll when introducing named companies or sites.",
+        "Custom Vector Diagrams & Product Close-ups: Grounding physical or technical claims using simple custom drawings or high-quality product/crop shots."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_001/references/obs_002/",
+        "evidence/channel_3_aevy_tv/channel_3_video_004/references/obs_003/",
+        "evidence/channel_3_aevy_tv/channel_3_video_008/references/obs_002/",
+        "evidence/channel_3_aevy_tv/channel_3_video_008/references/obs_005/",
+        "evidence/channel_3_aevy_tv/channel_3_video_009/references/obs_002/"
+      ],
+      "limits": "The visual assets represent the final edit choices; no workflow, prompts, or sourcing process is visible in the evidence, meaning observations are restricted to selection only and do not verify the external authenticity of the assets."
+    },
+    "asset_sourcing": {
+      "strength": "Almost entirely missing or weak across the channel, with only a single brief preview of Flow software interface as evidence of production or capture workflow.",
+      "patterns": [
+        "Product UI Preview: A brief capture of a software editing interface is the sole evidence of sourcing or interface preview; there is no other production or preparation capture shown."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_006/references/obs_006/"
+      ],
+      "limits": "Sourcing workflows (search engines, screen recordings of asset downloads, file explorers, keying/masking UI) are completely omitted across 9 out of 10 videos. All files have expected gaps in this category."
+    },
+    "good_video_principles": {
+      "strength": "Exceptional narrative framing and pacing. Hooks establish immediate stakes or contradiction, midpoints pivot the logical direction of the argument, and conclusions resolve with action-oriented venture prompts or strategic tradeoffs.",
+      "patterns": [
+        "High-Stakes Narrative Hooks: Launching videos by reframing a trend as a creative threat, correcting a common audience assumption, establishing economic stakes before naming the subject, presenting a stark contradiction, borrowing viral urgency, or stacking multiple crisis receipts.",
+        "Midpoint Narrative Reversals: Shifting the direction of the argument at the midpoint, moving from upside to downside/conflict, from general definitions to specific corporate actions, or from service lists to sociological theory.",
+        "Tradeoff or Prompt Closings: Ending with structural prompts, such as venture prompts, creative implications, real value propositions like decision fatigue, or a memorable strategic tradeoff."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_001/references/obs_001/",
+        "evidence/channel_3_aevy_tv/channel_3_video_001/references/obs_007/",
+        "evidence/channel_3_aevy_tv/channel_3_video_004/references/obs_001/",
+        "evidence/channel_3_aevy_tv/channel_3_video_007/references/obs_006/",
+        "evidence/channel_3_aevy_tv/channel_3_video_010/references/obs_010/"
+      ],
+      "limits": "Claims are limited to the edit structure and narrative pacing. External facts, statistics mentioned in the hooks, or market-size numbers are transcript-supported only and not verified."
+    },
+    "editing_layout": {
+      "strength": "High layout consistency using dark UI-style cards, roadmaps, presenter resets (talking heads on black) to manage transitions, and step-by-step spatial sequencing.",
+      "patterns": [
+        "Consistent Dark UI Cards & Boards: Structuring arguments or lists within dark-background visual frames, such as compact figure cards, explainer roadmaps, ARPU formula boards, or checklists.",
+        "Presenter Reset Cuts: Periodically cutting back to a centered talking-head shot (often on a black background) to slow down pacing, reset visual momentum, or bridge to a new chapter/concept.",
+        "Spatial Step Sequencing: Organizing chronological or narrative steps into visual sequences, such as vertical/horizontal image strips or cursor timelines."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_001/references/obs_003/",
+        "evidence/channel_3_aevy_tv/channel_3_video_002/references/obs_003/",
+        "evidence/channel_3_aevy_tv/channel_3_video_005/references/obs_002/",
+        "evidence/channel_3_aevy_tv/channel_3_video_007/references/obs_004/",
+        "evidence/channel_3_aevy_tv/channel_3_video_008/references/obs_003/"
+      ],
+      "limits": "The layout structures are optimized for readability, but small card text, legend labels, or secondary metrics on formula boards are often compressed and not fully readable in the frames."
+    },
+    "sound_design_sync": {
+      "strength": "Standard synchronization of logical pivots, edits, and reveals with high-intensity audio peaks (wooshes, hits, transitions) to reinforce transitions.",
+      "patterns": [
+        "Audio Peak Transition Accent: Synchronizing sound peaks with visual cuts, new chapter intros, or logical pivots to give visual changes extra emphasis.",
+        "Rhythmic List Pacing: Pacing rapid-fire questions or list items in sync with a sequence of local audio peaks."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_003/references/obs_004/",
+        "evidence/channel_3_aevy_tv/channel_3_video_004/references/obs_005/",
+        "evidence/channel_3_aevy_tv/channel_3_video_008/references/obs_004/"
+      ],
+      "limits": "Audio evidence is restricted to amplitude peak metadata showing timing and intensity. The exact acoustic type of sound effect (e.g., riser, woosh, click) cannot be verified from the data."
+    },
+    "data_text_density": {
+      "strength": "High typographic and graphic density, utilizing isolated metrics, highlighted research receipts, product pricing cards, and system diagrams to convey complex details cleanly.",
+      "patterns": [
+        "Highlighted Article Receipts: Embedding screenshots of articles, reports, or studies on screen and highlighting key paragraphs or numbers to visually verify script claims.",
+        "Isolating Core Metrics: Centering a single, massive statistic or percentage on a dark screen to create a clear visual takeaway before moving into details.",
+        "Structured Data Tables & Diagrams: Conveying high volumes of detail through pricing tiers, system workflow diagrams, or budget forecast charts."
+      ],
+      "evidence_references": [
+        "evidence/channel_3_aevy_tv/channel_3_video_001/references/obs_005/",
+        "evidence/channel_3_aevy_tv/channel_3_video_002/references/obs_004/",
+        "evidence/channel_3_aevy_tv/channel_3_video_004/references/obs_006/",
+        "evidence/channel_3_aevy_tv/channel_3_video_007/references/obs_003/",
+        "evidence/channel_3_aevy_tv/channel_3_video_010/references/obs_008/"
+      ],
+      "limits": "Although layouts are optimized for scan-readability, smaller text elements, footnotes, and legend details are compressed and illegible in the frame grids."
+    }
+  },
+  "do_not_overgeneralize": [
+    "Do not assume asset sourcing workflows are present; the channel shows only final visual assets.",
+    "Do not assume sound design sync patterns are driven by specific sound effect categories; the evidence contains amplitude peaks but lacks separated audio tracks.",
+    "Do not generalize transcript precision; segment splits and noise indicate parser inaccuracies that require manual context checks."
+  ]
+}

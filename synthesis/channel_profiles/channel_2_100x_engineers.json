@@ -1,0 +1,116 @@
+{
+  "channel_id": "channel_2_100x_engineers",
+  "weighting_matrix_version": "v1",
+  "videos_reviewed": [
+    "channel_2_video_001",
+    "channel_2_video_002",
+    "channel_2_video_003",
+    "channel_2_video_004",
+    "channel_2_video_005",
+    "channel_2_video_006",
+    "channel_2_video_007",
+    "channel_2_video_008",
+    "channel_2_video_009",
+    "channel_2_video_010"
+  ],
+  "category_summaries": {
+    "asset_selection": {
+      "strength": "Functional and concrete asset selection that anchors technical claims rather than utilizing generic illustrations or abstract stock footages.",
+      "patterns": [
+        "Using desk/workstation setups to ground abstract compute or AI claims.",
+        "Employing high-magnification close-ups (e.g. macro mosquito clips) to make biological processes tangible.",
+        "Using document and code-window screenshots to support technical assertions."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_010/references/obs_004/",
+        "evidence/channel_2_100x_engineers/channel_2_video_001/references/obs_002/",
+        "evidence/channel_2_100x_engineers/channel_2_video_003/references/obs_006/",
+        "evidence/channel_2_100x_engineers/channel_2_video_004/references/obs_008/"
+      ],
+      "limits": "Only final visual assets are visible. Sourcing or preparation workflows are not documented in these segments."
+    },
+    "asset_sourcing": {
+      "strength": "Direct screen captures of tool interfaces and terminal commands showing step-by-step preparation workflows.",
+      "patterns": [
+        "Exposing editing software workflows (e.g., Captions web UI and eye-contact modal features).",
+        "Demonstrating active command-line executions and branded tool landing screens (e.g., Graphify tool interface)."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_005/references/obs_003/",
+        "evidence/channel_2_100x_engineers/channel_2_video_005/references/obs_004/",
+        "evidence/channel_2_100x_engineers/channel_2_video_009/references/obs_004/"
+      ],
+      "limits": "Sourcing claims are strictly bounded to instances where the tool or platform interface is visible and the active workflow is shown in the frame."
+    },
+    "good_video_principles": {
+      "strength": "High-stakes hooks aligning micro product details with macro market consequences, paired with CTA screens isolated as custom cards.",
+      "patterns": [
+        "Hooks combining recognizable brand cues, financial figures, or stock movements to establish immediate viewer stakes.",
+        "Framing CTA transitions as structured step-by-step diagnostic workflows or package cards with explicit action cues (e.g., 'comment PM').",
+        "Introducing visual contrast (e.g., data-center scale vs. 14mm laptop thickness) to establish product payoffs."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_006/references/obs_001/",
+        "evidence/channel_2_100x_engineers/channel_2_video_004/references/obs_001/",
+        "evidence/channel_2_100x_engineers/channel_2_video_009/references/obs_001/",
+        "evidence/channel_2_100x_engineers/channel_2_video_008/references/obs_005/",
+        "evidence/channel_2_100x_engineers/channel_2_video_007/references/obs_008/"
+      ],
+      "limits": "Strategic claims, such as stock changes, tool utility, or category definitions, are transcript-supported within the context of the videos and are not verified externally."
+    },
+    "editing_layout": {
+      "strength": "Dynamic layout splits, presenter-graphic splits, and IDE code mode shifts that establish clear conceptual boundaries.",
+      "patterns": [
+        "Using split-screen formats to compare uncorrected talking-head footage with AI corrected output.",
+        "Staging host presenter views side-by-side with product/chip graphic cards.",
+        "Transitioning to dark code-editor UI environments to support claims of 'building' and implementation.",
+        "Clustering partner logos into structured cards rather than list overlays."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_005/references/obs_001/",
+        "evidence/channel_2_100x_engineers/channel_2_video_009/references/obs_005/",
+        "evidence/channel_2_100x_engineers/channel_2_video_007/references/obs_003/",
+        "evidence/channel_2_100x_engineers/channel_2_video_001/references/obs_003/"
+      ],
+      "limits": "Code snippets and small texts are frequently unreadable in standard previews, meaning layout observations represent structural mode-shifts rather than code audits."
+    },
+    "sound_design_sync": {
+      "strength": "Accents layout transitions, product name reveals, and CTAs using precise amplitude peaks.",
+      "patterns": [
+        "Timing major audio amplitude peaks with visual workflow transitions and step-by-step code reveals.",
+        "Grouping audio spikes around cuts between presenter framing and product card sequencing.",
+        "Syncing late audio peaks with final pinned-comment CTAs or key numeric payoffs."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_003/references/obs_004/",
+        "evidence/channel_2_100x_engineers/channel_2_video_003/references/obs_007/",
+        "evidence/channel_2_100x_engineers/channel_2_video_002/references/obs_005/",
+        "evidence/channel_2_100x_engineers/channel_2_video_001/references/obs_005/"
+      ],
+      "limits": "Audio markers identify peak timing and intensity only. The specific sound effect types (e.g. whoosh, ding) or mixing designs are not classified."
+    },
+    "data_text_density": {
+      "strength": "Structured and highly visual density that organizes lists, numbers, and specifications into easily readable layouts.",
+      "patterns": [
+        "Compressing ecosystems, platforms, or partner brands into clean logo clusters and card carousels.",
+        "Isolating key payoffs as oversized country-specific number cards over money or contextual backdrops.",
+        "Showing article screenshots with bright highlight markers to validate unified memory or capacity specifications.",
+        "Pairing agenda items with quantified processing states and steps."
+      ],
+      "evidence_references": [
+        "evidence/channel_2_100x_engineers/channel_2_video_007/references/obs_005/",
+        "evidence/channel_2_100x_engineers/channel_2_video_007/references/obs_002/",
+        "evidence/channel_2_100x_engineers/channel_2_video_006/references/obs_003/",
+        "evidence/channel_2_100x_engineers/channel_2_video_002/references/obs_008/",
+        "evidence/channel_2_100x_engineers/channel_2_video_008/references/obs_004/"
+      ],
+      "limits": "Small on-screen text details may be illegible. Some specific numbers are visible in the layout but not spoken in the transcript. Fact accuracy (numbers, benchmarks, stocks) is not verified against external sources."
+    }
+  },
+  "do_not_overgeneralize": [
+    "Do not claim that exact benchmark values, salary figures, or corporate claims are verified; they are claims made inside the videos.",
+    "Do not assume that audio peaks represent a single sound design style (e.g., whooshes); they are amplitude peaks only.",
+    "Do not overgeneralize the asset sourcing workflow across all videos; it is explicitly shown in tool interfaces only (e.g., Captions in video 5, Graphify in video 9).",
+    "Do not assume all small on-screen text or code blocks are legible; observations are restricted to overall structure and readable headers."
+  ]
+}
